@@ -9,6 +9,7 @@ body {
   overflow-x: hidden;
   font-family: 'Nunito', sans-serif;
   font-family: 'Poppins', sans-serif;
+  height: 5000px;
 }
 
 html {
@@ -114,13 +115,19 @@ a {
 .details .container .right .socials i {
   margin-top: 5px;
   margin-right: 7px;
+  cursor: pointer;
 }
 
-nav {
-  position: relative;
+.nav {
+  width: 100%;
+  -webkit-transition: 1s ease all;
+  transition: 1s ease all;
+  -webkit-box-shadow: 0px 9px 37.2px 2.8px rgba(128, 123, 173, 0.15);
+          box-shadow: 0px 9px 37.2px 2.8px rgba(128, 123, 173, 0.15);
+  padding: 10px 0 0 0;
 }
 
-nav .menus {
+.nav .menus {
   float: right;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -131,33 +138,35 @@ nav .menus {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-transition: 1s ease all;
+  transition: 1s ease all;
 }
 
-nav .menus ul {
+.nav .menus ul {
   padding: 30px 0;
   position: relative;
 }
 
-nav .menus ul li {
+.nav .menus ul li {
   display: inline-block;
   text-decoration: none;
-  color: #5c596f;
+  color: #3B3663;
 }
 
-nav .menus ul li a {
+.nav .menus ul li a {
   text-decoration: none;
-  color: #5c596f;
+  color: #3B3663;
   -webkit-transition: .3s ease-in-out color;
   transition: .3s ease-in-out color;
   font-weight: 600;
   margin: 0 15px;
 }
 
-nav .menus ul li a:hover {
+.nav .menus ul li a:hover {
   color: #6153FC;
 }
 
-nav .menus ul i {
+.nav .menus ul i {
   font-size: 25px;
   display: none;
   position: absolute;
@@ -166,40 +175,45 @@ nav .menus ul i {
   cursor: pointer;
 }
 
-nav .menus .right {
+.nav .menus .right {
   margin-top: -13px;
   padding-left: 15px;
-  border-left: 1px solid #5c596f;
+  border-left: 1px solid #3B3663;
 }
 
-nav .menus .right a {
+.nav .menus .right a {
   color: #FFFFFF;
-  background-color: #6153FC;
-  padding: 20px 27px;
   border-radius: 6px;
-  text-decoration: none;
   font-size: 14px;
-  -webkit-transition: .4s ease-in-out background-color;
-  transition: .4s ease-in-out background-color;
+  background-color: #6153FC;
+  text-decoration: none;
+  padding: 20px 27px;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
 }
 
-nav .menus .right a:hover {
+.nav .menus .right a:hover {
+  color: #FFFFFF;
   background-color: #FF4B36;
 }
 
-nav .menus .right i {
+.nav .menus .right a:active {
+  background-color: #6153FC;
+}
+
+.nav .menus .right i {
   font-size: 16px;
-  color: #5c596f;
+  color: #3B3663;
   margin-right: 20px;
 }
 
-nav .menus .right .searchBtn {
+.nav .menus .right .searchBtn {
   cursor: pointer;
 }
 
-nav .nav-menu {
+.nav .nav-menu {
   font-size: 25px;
-  color: #5c596f;
+  color: #3B3663;
   display: none;
   position: absolute;
   right: 0;
@@ -208,9 +222,20 @@ nav .nav-menu {
   cursor: pointer;
 }
 
-nav .toggle {
+.nav .toggle {
   position: absolute;
   top: 50%;
+}
+
+.sticky {
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  top: 0;
+  z-index: 11;
+  background-color: #FFFFFF;
+  display: block;
 }
 
 .search {
@@ -224,6 +249,7 @@ nav .toggle {
   opacity: 0;
   -webkit-transition: .5s ease-in-out all;
   transition: .5s ease-in-out all;
+  z-index: 111;
 }
 
 .search .container {
@@ -253,9 +279,9 @@ nav .toggle {
 .search .container input {
   text-align: center;
   font-size: 30px;
-  color: #5c596f;
+  color: #3B3663;
   border: none;
-  border-bottom: 1px solid #5c596f;
+  border-bottom: 1px solid #3B3663;
   padding-bottom: 20px;
   outline: none;
   border-radius: 0;
@@ -275,6 +301,86 @@ nav .toggle {
   -webkit-transform: translatey(0%);
           transform: translatey(0%);
   opacity: 1;
+}
+
+header {
+  background: url(/img/headerbg.jpeg);
+  width: 100%;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+header .container .row span {
+  color: #3B3663;
+  letter-spacing: 1.5px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 900;
+  font-size: 13px;
+  margin-left: 50px;
+  position: relative;
+}
+
+header .container .row span::before {
+  position: absolute;
+  content: "";
+  left: -60px;
+  top: 40%;
+  height: 2px;
+  background-color: #6153FC;
+  width: 50px;
+}
+
+header .container .row h1 {
+  font-weight: 800;
+  color: #3B3663;
+  margin-bottom: 20px;
+}
+
+header .container .row p {
+  font-weight: 500;
+  line-height: 30px;
+  font-family: 'Nunito', sans-serif;
+  margin-bottom: 40px;
+}
+
+header .container .row .btns a {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+header .container .row .btns .button {
+  color: #3B3663;
+  background-color: #6153FC;
+  padding: 18px 30px;
+  color: white;
+  -webkit-transition: .5s ease all;
+  transition: .5s ease all;
+  border-radius: 6px;
+  margin-right: 30px;
+}
+
+header .container .row .btns .button:hover {
+  background-color: #FF4B36;
+}
+
+header .container .row .btns i {
+  margin-right: 5px;
+}
+
+header .container .row .btns .plus {
+  color: #3B3663;
+  -webkit-transition: .3s ease all;
+  transition: .3s ease all;
+}
+
+header .container .row .btns .plus i {
+  color: #2C8BFF;
+}
+
+header .container .row .btns .plus:hover {
+  color: #2C8BFF;
 }
 
 @media (max-width: 991px) {

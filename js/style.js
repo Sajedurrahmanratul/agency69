@@ -30,3 +30,13 @@ function search() {
 }
 
 search()
+
+function stickyNav() {
+    const navbar = document.querySelector(".nav");
+
+    window.addEventListener("scroll", () => {
+        navbar.classList.toggle("sticky", window.scrollY > 500)
+    })
+}
+
+stickyNav()
