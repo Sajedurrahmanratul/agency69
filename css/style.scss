@@ -1,0 +1,364 @@
+// Common Css
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    overflow-x: hidden;
+    font-family: 'Nunito', sans-serif;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+//Common Components
+
+$primary-color: #6153FC;
+$secondery-color: #FF4B36;
+$semi-Secondery-color: #2C8BFF;
+$pure-color: #FFFFFF;
+$dark-color: #5c596f;
+
+//fonts
+h1{
+    font-family: 'Nunito', sans-serif;
+    font-size: 60px;
+    font-weight: 600px;
+
+}
+
+h2{
+    font-family: 'Nunito', sans-serif;
+    font-size: 48px;
+    font-weight: 600px;
+}
+
+h3{
+    font-family: 'Nunito', sans-serif;
+    font-family: 32px;
+    font-weight: 500;
+    
+    
+}
+
+h4{
+    font-family: 'Nunito', sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+h5{
+    font-size: 20px;
+    font-weight: 500;
+    font-family: 'Nunito', sans-serif;
+}
+
+p{
+    font-family: 'Poppins', sans-serif;
+    font-weight: normal;
+    font-size: 16px;
+}
+
+a{
+    font-family: 'Poppins', sans-serif;
+    font-weight: normal;
+    font-size: 16px;
+    text-decoration: none;
+
+
+}
+
+
+//details section
+
+.details{
+    background-color: $primary-color;
+    padding: 12px 0 0 0;
+    
+    p,a,i{
+        font-size: 14px;
+        color: white;
+    }   
+    
+    a{
+        text-decoration: none;
+        color: white;
+        &:hover{
+            color: white;
+        }
+    }
+    
+    .container{
+        display: flex;
+        justify-content: space-between;
+
+        .left{
+            .tel{
+                margin-right: 18px;
+                border-right: 1px solid white;
+                padding: 0 18px 0 0;
+            }
+        }
+        .right{
+            display: flex;
+            
+            .socials{
+                display: flex;
+                margin-left: 36px;
+                p{
+                    margin-right: 18px;
+                border-right: 1px solid white;
+                padding: 0 18px 0 0;
+                }
+                
+                i{
+                    margin-top: 5px;
+                    margin-right: 7px;
+                }
+            }
+        }
+    }
+}
+
+//nav
+
+nav{
+   position: relative;
+    .menus{
+        float: right;    
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        ul{
+           padding: 30px 0;
+           position: relative;
+            li{
+                display: inline-block;
+                text-decoration: none;
+                color: $dark-color;
+
+                a{
+                    text-decoration: none;
+                    color: $dark-color;
+                    transition: .3s ease-in-out color;
+                    font-weight: 600;
+                    margin: 0 15px;
+                    &:hover{
+                        color: $primary-color;
+                    }
+                }
+
+                
+            }
+            i{
+                font-size: 25px;
+                display: none;
+                position: absolute;
+                top: 30px;
+                right: 30px;
+                cursor: pointer;
+            }
+        }
+        .right{
+            margin-top: -13px;
+            padding-left: 15px;
+            border-left: 1px solid $dark-color;
+            a{
+                color: $pure-color;
+                background-color: $primary-color;
+                padding: 20px 27px;
+                border-radius: 6px;
+                text-decoration: none;
+                font-size: 14px;
+                transition: .4s ease-in-out background-color;
+                &:hover{
+                    background-color: $secondery-color;
+                }
+                
+            }
+
+        i{
+            font-size: 16px;
+            color: $dark-color;
+            margin-right: 20px;
+            
+        }
+
+
+        .searchBtn{
+            cursor: pointer;
+        }
+        
+        }
+       
+    }
+
+    .nav-menu{
+        font-size: 25px;
+        color: $dark-color;
+        display: none;
+        position: absolute;
+        right: 0;
+        top: 40%;
+        right: 45px;
+        cursor: pointer;
+    }
+    .toggle{
+        position: absolute;
+        top: 50%;
+        
+    }
+}
+
+.search{
+    position: relative;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: white;
+    transform: translatey(-110%);
+    opacity: 0;
+    transition: .5s ease-in-out all;
+    .container{
+     
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+        h2{
+            color: #3b3663;
+            font-size: 47px;
+            font-weight: 700;
+            margin-bottom: 70px;
+        }
+
+        input{
+            text-align: center;
+            font-size: 30px;
+            color: $dark-color;
+            border: none;
+            border-bottom: 1px solid $dark-color;
+            padding-bottom: 20px;
+            outline: none;
+            border-radius: 0;
+            box-shadow: none;
+           
+        }
+    }
+
+    .wrong{
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        font-size: 30px;
+        cursor: pointer;
+    }
+}
+
+.showSearch{
+    transform: translatey(0%);
+    opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Large devices (desktops, 992px and up)
+@media (max-width: 991px) { 
+
+    //detail
+
+    .details{
+        .container{
+            justify-content: center;
+            .left{
+                display: none;
+            }
+
+            .right{
+                .socials{
+                    display: none;
+                }
+            }
+            
+        }
+    }
+
+
+
+    //nav
+
+    nav{
+       .menus{
+         text-align: center;
+         width: 100%;        
+        ul{
+            background-color: $primary-color;
+           position: fixed;
+           top: 0;
+           width: 100%;
+           display: flex;
+           flex-direction: column;
+           justify-content: center;
+           height: 100vh;
+            z-index: 111;
+            margin: 0;
+            padding: 0;
+            transition: .5s ease-in-out all;
+            transform: translateX(110%);
+            opacity: 0;
+             
+            li{
+               
+                display: block;
+                line-height: 60px;
+                a{
+                    font-size: 20px;
+                    color: $pure-color;
+                }
+                
+                
+            }
+            i{
+                display: block;
+                color: $pure-color;
+            }
+        }
+
+        .right{
+            display: none;
+            
+        }
+        
+        .show{
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+       }
+       .nav-menu{
+        display: block;
+    }
+    }
+    
+
+}
